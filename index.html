@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>역사를 지켜라</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>%F0%9F%8F%B9</text></svg>">
+<link rel="stylesheet" href="css/game.css">
+<script src="https://unpkg.com/peerjs@1.5.5/dist/peerjs.min.js" onerror="window.__peerLoadFailed=true"></script>
+</head>
+<body>
+<div id="wrap">
+  <div id="hud">
+    <div>SCORE <b id="score">0</b></div>
+    <div id="hearts">❤️❤️❤️❤️❤️</div>
+    <div id="stageLabel">1편: 고구려</div>
+    <div id="waveLabel">대기중</div>
+    <div>코드 <b id="codeDisplay">----</b></div>
+    <div id="connBadge" class="dead">폰 연결 대기중</div>
+  </div>
+
+  <div id="stage">
+    <canvas id="game" width="1600" height="900"></canvas>
+    <div id="bossHpWrap" class="hidden"><div id="bossHpFill"></div></div>
+
+    <div id="overlay">
+      <div id="endingTextPanel">
+        <h2 id="overlayTitle">역사를 지켜라</h2>
+        <div id="overlayBody">이미지를 불러오는 중...</div>
+        <div id="introConnectRow">
+          <div id="introCodeBox" class="hidden">
+            <div id="introCodeLabel">폰 연결 코드</div>
+            <div id="introCodeValue">----</div>
+          </div>
+          <div id="introQrPlaceholder" class="hidden">
+            <span>QR 코드<br>(추가 예정)</span>
+          </div>
+        </div>
+        <button id="startBtn" onclick="onStartButtonClick()">게임 시작</button>
+      </div>
+    </div>
+
+    <div id="quizOverlay" class="hidden">
+      <h3 id="quizQuestion"></h3>
+      <div class="quiz-options" id="quizOptions"></div>
+      <div class="quiz-feedback" id="quizFeedback"></div>
+    </div>
+  </div>
+</div>
+
+<script src="js/game.js"></script>
+</body>
+</html>

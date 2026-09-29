@@ -1,0 +1,86 @@
+  :root{
+    --accent:#39e07a;
+    --accent-dim:#1c6b3f;
+    --text:#2a1d10;
+    --text-light:#f4e9d8;
+  }
+  *{box-sizing:border-box; -webkit-tap-highlight-color:transparent; user-select:none;}
+  html,body{
+    height:100%; margin:0; background:#0a0a0d; color:var(--text-light);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    overscroll-behavior:none; touch-action:none;
+  }
+
+  #setup{
+    position:fixed; inset:0; display:flex; flex-direction:column;
+    align-items:center; justify-content:center; gap:16px; padding:24px;
+    background-image:url('../assets/images/connect-bg.png');
+    background-size:cover; background-position:center;
+  }
+  #setup.hidden{display:none;}
+  #setup h1{
+    font-size:20px; font-weight:700; margin:0; color:#3a2a18;
+  }
+  #setup p{
+    color:#3a2a18; font-size:13px; text-align:center; margin:0; max-width:280px; line-height:1.6;
+    font-weight:600;
+  }
+  #codeInput{
+    width:100%; max-width:280px; padding:14px 16px; border-radius:10px;
+    border:2px solid #caa15a; background:#241a10; color:#ffd77a;
+    font-size:28px; font-weight:700; letter-spacing:0.15em; text-align:center; font-variant-numeric:tabular-nums;
+  }
+  #codeInput::placeholder{ color:rgba(255,215,122,0.35); }
+  #connectBtn{
+    width:100%; max-width:280px; padding:14px; border-radius:10px; border:none;
+    background:var(--accent); color:#04160c; font-size:15px; font-weight:700;
+  }
+  #status{
+    font-size:12px; color:#7a3b1e; min-height:16px; font-weight:700;
+  }
+
+  #pad{
+    position:fixed; inset:0; display:none;
+    background-image:url('../assets/images/controller-bg.png');
+    background-size:cover; background-position:center;
+    flex-direction:column; align-items:center; justify-content:center;
+    gap:8vh;
+  }
+  #pad.active{display:flex;}
+
+  .dpad{ position:relative; width:67vmin; height:67vmin; max-width:408px; max-height:408px; flex-shrink:0; }
+  .dpad button{
+    position:absolute; width:34%; height:34%;
+    background:rgba(30,22,12,0.55); border:2px solid rgba(255,255,255,0.35);
+    border-radius:14%; padding:0;
+  }
+  .dpad button img{ width:100%; height:100%; object-fit:contain; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.6)); padding:10%; box-sizing:border-box; }
+  .dpad button.active{ background:rgba(57,224,122,0.35); border-color:var(--accent); }
+  .dpad button.active img{ transform:scale(0.9); }
+  .dpad .up{left:33%; top:0;}
+  .dpad .down{left:33%; bottom:0;}
+  .dpad .left{left:0; top:33%;}
+  .dpad .right{right:0; top:33%;}
+
+  #fireBtn{
+    position:relative; width:58vmin; height:58vmin; max-width:348px; max-height:348px; flex-shrink:0;
+    border-radius:50%; background:rgba(30,22,12,0.55); border:2px solid rgba(255,255,255,0.35);
+    display:flex; align-items:center; justify-content:center;
+  }
+  #fireBtn img{ width:62%; height:62%; object-fit:contain; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.6)); }
+  #fireBtn.active{ background:rgba(57,224,122,0.35); border-color:var(--accent); }
+  #fireBtn.active img{ transform:scale(0.9); }
+
+  @media (orientation: landscape){
+    #pad{
+      flex-direction:row; align-items:center; justify-content:center;
+      gap:10vw;
+    }
+  }
+
+  #connIndicator{
+    position:fixed; top:10px; right:12px; font-size:10px; color:#fff;
+    display:flex; align-items:center; gap:6px; z-index:10; text-shadow:0 1px 4px rgba(0,0,0,0.7);
+  }
+  #connDot{width:7px; height:7px; border-radius:50%; background:#555;}
+  #connDot.live{background:var(--accent); box-shadow:0 0 6px var(--accent);}

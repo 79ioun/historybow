@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<title>역사를 지켜라 — 컨트롤러</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>%F0%9F%8F%B9</text></svg>">
+<link rel="stylesheet" href="css/controller.css">
+<script src="https://unpkg.com/peerjs@1.5.5/dist/peerjs.min.js" onerror="window.__peerLoadFailed=true"></script>
+</head>
+<body>
+
+<div id="setup">
+  <h1>역사를 지켜라</h1>
+  <p>PC 게임 화면에 표시된 6자리 코드를 입력하세요.</p>
+  <input id="codeInput" type="text" placeholder="ABC123" maxlength="6" style="text-transform:uppercase;">
+  <button id="connectBtn">연결</button>
+  <div id="status"></div>
+</div>
+
+<div id="connIndicator"><div id="connDot"></div><span id="connText">연결 안 됨</span></div>
+
+<div id="pad">
+  <div class="dpad">
+    <button class="up" id="up"><img src="assets/images/arrow-up.png" alt="up"></button>
+    <button class="down" id="down"><img src="assets/images/arrow-down.png" alt="down"></button>
+    <button class="left" id="left"><img src="assets/images/arrow-left.png" alt="left"></button>
+    <button class="right" id="right"><img src="assets/images/arrow-right.png" alt="right"></button>
+  </div>
+  <button id="fireBtn"><img src="assets/images/fire-icon.png" alt="fire"></button>
+</div>
+
+<script src="js/controller.js"></script>
+</body>
+</html>
